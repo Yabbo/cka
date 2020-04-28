@@ -58,7 +58,7 @@ The usage ``` --generator=deployment/v1beta1 ``` is deprecated as of Kubernetes 
 
 
 
-## IMPORTANT:
+### IMPORTANT:
 
 ``` kubectl create deployment ``` does not have a ``` --replicas ``` option. You could first create it and then scale it using the ``` kubectl scale ``` command.
 
