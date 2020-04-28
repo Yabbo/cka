@@ -17,7 +17,7 @@ Edit the service named docker-registry
  Use an alternative editor
 ``` KUBE_EDITOR="nano" kubectl edit svc/docker-registry ``` 
 
-The ``` kubectl edit `` command will open any configuration currently running within your kubernetes cluster for editing. Appon saving the changes will be applied to the cluster.
+The ```kubectl edit``` command will open any configuration currently running within your kubernetes cluster for editing. Appon saving the changes will be applied to the cluster.
 
 ---
 ## POD
