@@ -8,6 +8,16 @@ Certified Kubernetes Administrator notes and templates
 Use the above two in combination to generate a resource definition file quickly, that you can then modify and create resources as required, instead of creating the files from scratch.
 
 ---
+## Editing
+Edit any API resource in your preferred editor.
+
+Edit the service named docker-registry
+``` kubectl edit svc/docker-registry ```
+
+ Use an alternative editor
+``` KUBE_EDITOR="nano" kubectl edit svc/docker-registry ``` 
+
+---
 ## POD
 
 ### List pods in ALL namespaces
