@@ -117,6 +117,12 @@ Both the above commands have their own challenges. While one of it cannot accept
 
 ``` kubectl config set-context $(kubectl config current-context) --namespace=dev ```
 
+---
+## Logs
+
+Accessing logs from a container within kubernetes is as simple as running ```kubectl logs``` You can even use the ```-f``` flag to follow the logs
+
+```kubectl logs -f pod-name container-name```
 
 ---
 ### Reference:
