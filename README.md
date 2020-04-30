@@ -125,6 +125,41 @@ Accessing logs from a container within kubernetes is as simple as running ```kub
 ```kubectl logs -f pod-name container-name```
 
 ---
+## Secrets
+There are many ways to create secrets but if you create a file you must base64 encode the keys. this is not secure but the practice of using a secret file makes it more secure as its only allowed in pods the request it and not exposed to the entire cluster.
+
+The ```kubectl get secrets``` command will have a columb of DATA which is how many keys are stored in the secret.
+
+The easiest way to create a secret file with the following values it to run this command.
+* Secret Name: db-secret
+* Secret 1: DB_Host=sql01
+* Secret 2: DB_User=root
+* Secret 3: DB_Password=password123
+
+ it to run this command.
+ 
+```kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123```
+
+you can then reference the secret in a pod definition as follows. 
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+  name: webapp-pod
+ name: webapp-pod
+spec:
+ containers:
+ - image: kodekloud/simple-webapp-mysql
+   imagePullPolicy: Always
+   name: webapp
+   envFrom:
+   - secretRef:
+      name: db-secret
+```
+
+---
 ### Reference:
 
 https://kubernetes.io/docs/reference/kubectl/conventions/
