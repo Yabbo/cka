@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: finance
+spec:
+  containers:
+  - name: redis
+    image: redis
+    ports:
+     - containerPort: 8080
+    envFrom:
+     - configMapRef:
+        name: my-configmap
