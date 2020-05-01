@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-nginx-dep
+  namespace: default
+  labels:
+    app: my-nginx-dep
+spec:
+  ports:
+    -
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30963
+  selector:
+    app: my-nginx-dep
+  clusterIP:
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
