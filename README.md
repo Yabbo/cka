@@ -16,7 +16,7 @@ Use the above two in combination to generate a resource definition file quickly,
 
 * use ``kubectl drain node`` to drain it of pods and mark it unscheduleable.
 * preform os or other upgrade tasks 
-* one the node is back online use the command ``kubectl uncordon node``` to allow it to be scheduable again
+* one the node is back online use the command ```kubectl uncordon node``` to allow it to be scheduable again
 
 ---
 ## Editing
