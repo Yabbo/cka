@@ -18,6 +18,8 @@ Use the above two in combination to generate a resource definition file quickly,
 * preform os or other upgrade tasks 
 * one the node is back online use the command ```kubectl uncordon node``` to allow it to be scheduable again
 
+NOTE: you can also use the ```kuibectl cordon node``` command to make sure new pods are not scheduled onto it but it will not drain it of existing pods. 
+
 ---
 ## Editing
 Edit any API resource in your preferred editor.
