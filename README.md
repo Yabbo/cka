@@ -12,6 +12,13 @@ To get the YAML file of a running pod/service/deployment... use the following sy
 Use the above two in combination to generate a resource definition file quickly, that you can then modify and create resources as required, instead of creating the files from scratch.
 
 ---
+## Upgrading Nodes
+
+* use ``kubectl drain node`` to drain it of pods and mark it unscheduleable.
+* preform os or other upgrade tasks 
+* one the node is back online use the command ``kubectl uncordon node``` to allow it to be scheduable again
+
+---
 ## Editing
 Edit any API resource in your preferred editor.
 
