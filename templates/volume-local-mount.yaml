@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-number-generator
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["/bin/sh","-c"]
+    args: ["shuf -i 0-100 -n 1 >> /opt/number.out;"]
+    volumeMounts:
+    - mountPath: /opt
+      name: data-volume
+
+  volumes:
+  - name: data-volume
+    hostPath:
+      path: /data
+
+
+#this will write a random number to /opt/number.out and story it localy in /data on the local host
