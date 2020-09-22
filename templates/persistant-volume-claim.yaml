@@ -8,3 +8,21 @@ spec:
   resources:
     requests:
       storage: 500Mi
+
+
+#-----------------------------------------------------------      
+#GPC Example
+
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: myclaim
+#spec:
+#  accessModes:
+#    - readWriteOnce
+#  capacity:
+#    storage: 500Mi
+#
+#  gcePersistentDisk:
+#    pdName: pd-disk
+#    fsType: ext4
