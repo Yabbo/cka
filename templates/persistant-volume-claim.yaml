@@ -13,16 +13,17 @@ spec:
 #-----------------------------------------------------------      
 #GPC Example
 
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: myclaim
-#spec:
-#  accessModes:
-#    - readWriteOnce
-#  capacity:
-#    storage: 500Mi
-#
-#  gcePersistentDisk:
-#    pdName: pd-disk
-#    fsType: ext4
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+spec:
+  accessModes:
+    - readWriteOnce
+  storageClassName: google-storage #references the storage-class-definition.yaml name we specified
+  capacity:
+    storage: 500Mi
+
+  gcePersistentDisk:
+    pdName: pd-disk
+    fsType: ext4
